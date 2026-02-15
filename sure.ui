@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>260</height>
+   </rect>
+  </property>
+
+  <property name="windowTitle">
+   <string>Confirmation</string>
+  </property>
+
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #1e1e2f;
+        border-radius: 20px;
+    }
+
+    QLabel {
+        color: #ffffff;
+        font-family: Segoe UI;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    QDialogButtonBox QPushButton {
+        min-width: 120px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-family: Segoe UI;
+        font-weight: 500;
+        padding: 6px;
+    }
+
+    QPushButton {
+        background-color: #2d2d44;
+        color: white;
+        border: none;
+    }
+
+    QPushButton:hover {
+        background-color: #3a3a5a;
+    }
+
+    QPushButton:pressed {
+        background-color: #505070;
+    }
+
+    QPushButton[text="Yes"] {
+        background-color: #00c853;
+        color: white;
+    }
+
+    QPushButton[text="Yes"]:hover {
+        background-color: #00e676;
+    }
+
+    QPushButton[text="Cancel"] {
+        background-color: #d32f2f;
+        color: white;
+    }
+
+    QPushButton[text="Cancel"]:hover {
+        background-color: #ef5350;
+    }
+   </string>
+  </property>
+
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>60</y>
+     <width>260</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="text">
+    <string>Are you sure?</string>
+   </property>
+  </widget>
+
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>170</y>
+     <width>300</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Yes</set>
+   </property>
+   <property name="centerButtons">
+    <bool>true</bool>
+   </property>
+  </widget>
+
+ </widget>
+
+ <resources/>
+
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+  </connection>
+
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
+</ui>
